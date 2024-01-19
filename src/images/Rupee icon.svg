@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="77" height="77" viewBox="0 0 77 77">
+  <g id="Rupee_icon" data-name="Rupee icon" transform="translate(-0.251)">
+    <rect id="Rectangle_33" data-name="Rectangle 33" width="77" height="77" rx="38.5" transform="translate(0.251)" fill="#f9da49"/>
+    <rect id="Rectangle_34" data-name="Rectangle 34" width="57" height="57" rx="28.5" transform="translate(10.251 10)" fill="#f2ad3c"/>
+    <path id="Icon_awesome-rupee-sign" data-name="Icon awesome-rupee-sign" d="M16.19,5.614a.631.631,0,0,0,.631-.631v-2.1a.631.631,0,0,0-.631-.631H.631A.631.631,0,0,0,0,2.881V5.233a.631.631,0,0,0,.631.631H5.113A3.792,3.792,0,0,1,8.318,7.3H.631A.631.631,0,0,0,0,7.927v2.1a.631.631,0,0,0,.631.631H8.976a3.633,3.633,0,0,1-3.929,3.082H.631A.631.631,0,0,0,0,14.373v2.786a.631.631,0,0,0,.2.464l8.676,8.008a.631.631,0,0,0,.428.167h4.34a.631.631,0,0,0,.428-1.094L6.143,17.383a7.2,7.2,0,0,0,7.27-6.723H16.19a.631.631,0,0,0,.631-.631v-2.1A.631.631,0,0,0,16.19,7.3H13.1a7.2,7.2,0,0,0-.749-1.682Z" transform="translate(30.841 24.476)" fill="#624517"/>
+  </g>
+</svg>

@@ -1,0 +1,142 @@
+.display {
+    width: 821px;
+    height: 354px;
+    /* UI Properties */
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 0px 12px #00000014;
+    border-radius: 15px;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 35px;
+
+
+}
+
+.display_question {
+    width: 100%;
+
+    /* UI Properties */
+    text-align: center;
+    font: normal normal medium 20px/25px Helvetica Neue;
+    letter-spacing: 1px;
+    color: #000000;
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.display_question_inner {
+    width: 619px;
+    height: 49px;
+    text-align: center;
+    font: normal normal medium 20px/25px Helvetica Neue;
+    letter-spacing: 1px;
+    color: #000000;
+    opacity: 1;
+}
+
+.display_image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 57px;
+}
+
+.button {
+    width: 118px;
+    height: 147px;
+    /* UI Properties */
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 29px;
+}
+
+.button img {
+    width: 77px;
+    height: 77px;
+    /* UI Properties */
+
+    opacity: 1;
+}
+
+.next {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.next button {
+    width: 206px;
+    height: 69px;
+    /* UI Properties */
+    background: #50A972 0% 0% no-repeat padding-box;
+    box-shadow: 0px 0px 12px #00000014;
+    border-radius: 15px;
+    opacity: 1;
+}
+
+.names {
+    width: 132px;
+    height: 20px;
+    /* UI Properties */
+    text-align: center;
+    font: normal normal 600 15px/20px DM Sans;
+    letter-spacing: 0.75px;
+    color: #777778;
+    text-transform: capitalize;
+    opacity: 1;
+}
+
+.display_question_inner {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 93px;
+    gap: 57px;
+}
+
+.display_textarea {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 1;
+}
+
+textarea {
+    width: 327px;
+    height: 47px;
+    /* UI Properties */
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: inset 0px 0px 16px #0000000F;
+    border-radius: 10px;
+    opacity: 1;
+    border-style: none;
+    border-color: Transparent;
+    overflow: auto;
+    padding-top: 12px;
+    padding-left: 25px;
+    /* text-align: center; */
+    justify-content: center;
+    font: normal normal normal 20px/24px Helvetica Neue;
+    color: #777778;
+}
+
+::placeholder {
+    width: 130px;
+    height: 23px;
+    
+    font: normal normal normal 20px/24px Helvetica Neue;
+    letter-spacing: 1px;
+    color: #777778;
+    opacity: 0.5;
+    /* padding-top: 12px;
+    padding-left: 25px; */
+}

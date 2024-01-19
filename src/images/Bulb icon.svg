@@ -1,0 +1,17 @@
+<svg id="Bulb_icon" data-name="Bulb icon" xmlns="http://www.w3.org/2000/svg" width="52.001" height="77" viewBox="0 0 52.001 77">
+  <path id="Path_34" data-name="Path 34" d="M-3671.322-3400.126l-16.7-34.77q-.449-.853-.837-1.742l-.083-.172h.009A25.916,25.916,0,0,1-3691-3447a26,26,0,0,1,26-26,26,26,0,0,1,26,26,25.918,25.918,0,0,1-2.08,10.205h.012l-.123.256q-.348.789-.744,1.549l-16.744,34.863A6.9,6.9,0,0,1-3665-3396,6.9,6.9,0,0,1-3671.322-3400.126Z" transform="translate(3691 3473)" fill="#f4b903"/>
+  <path id="Union_3" data-name="Union 3" d="M4,16a4,4,0,0,1-4-4H0A4,4,0,0,1,4,8H32a4,4,0,0,1,4,4h0a4,4,0,0,1-4,4ZM4,8A4,4,0,0,1,4,0H32a4,4,0,0,1,0,8Z" transform="translate(7.681 53.999)" fill="#503d01"/>
+  <g id="Rectangle_28" data-name="Rectangle 28" transform="translate(20.68 39)" fill="none" stroke="#503d01" stroke-width="3">
+    <rect width="10" height="18" stroke="none"/>
+    <rect x="1.5" y="1.5" width="7" height="15" fill="none"/>
+  </g>
+  <g id="Rectangle_29" data-name="Rectangle 29" transform="translate(13.68 32)" fill="#f4b903" stroke="#503d01" stroke-width="3">
+    <path d="M5,0H5a5,5,0,0,1,5,5v5a0,0,0,0,1,0,0H5A5,5,0,0,1,0,5V5A5,5,0,0,1,5,0Z" stroke="none"/>
+    <path d="M5,1.5H5A3.5,3.5,0,0,1,8.5,5V8.5a0,0,0,0,1,0,0H5A3.5,3.5,0,0,1,1.5,5V5A3.5,3.5,0,0,1,5,1.5Z" fill="none"/>
+  </g>
+  <g id="Rectangle_30" data-name="Rectangle 30" transform="translate(27.68 32)" fill="#f4b903" stroke="#503d01" stroke-width="3">
+    <path d="M5,0H5a5,5,0,0,1,5,5V5a5,5,0,0,1-5,5H0a0,0,0,0,1,0,0V5A5,5,0,0,1,5,0Z" stroke="none"/>
+    <path d="M5,1.5H5A3.5,3.5,0,0,1,8.5,5V5A3.5,3.5,0,0,1,5,8.5H1.5a0,0,0,0,1,0,0V5A3.5,3.5,0,0,1,5,1.5Z" fill="none"/>
+  </g>
+  <rect id="Rectangle_25" data-name="Rectangle 25" width="5" height="5" rx="2.5" transform="translate(23.68 60)" fill="#f4b903"/>
+</svg>
