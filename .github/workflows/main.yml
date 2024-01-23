@@ -23,7 +23,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Git checkout
-        uses: actions/checkout@v2  # You can keep this as v2
+        uses: actions/checkout@sha256:latest_commit_sha
 
       - name: Install packages
         run: yarn install
