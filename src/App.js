@@ -97,8 +97,8 @@ const handleSubmit = async () => {
   if (currentIndex < display_qaList.length - 1) {
     setCurrentIndex(currentIndex + 1);
 }
-  try {
-      const response = await fetch('http://localhost:5000/feedback', {
+  try {   
+      const response = await fetch('http://65.1.92.198/api', {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json',
