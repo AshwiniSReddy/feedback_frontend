@@ -16,25 +16,25 @@ jobs:
       matrix:
         node-version: [20.x]
 
-    steps:      
+    steps:
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
 
       - name: Git checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v2  # You can keep this as v2
 
       - name: Install packages
         run: yarn install
 
-      - name: Production build      
+      - name: Production build
         run: |
           unset CI
           yarn build
 
       - name: Deploy to S3
-        uses: jakejarvis/s3-sync-action@master  # Or another suitable action
+        uses: jakejarvis/s3-sync-action@master  # Assuming this is the correct action for your use case
         with:
           args: --acl public-read --delete
         env:
