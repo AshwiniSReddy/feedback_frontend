@@ -25,11 +25,11 @@ function Page() {
                     {/* Loop to create circles and dotted lines */}
                     {[...Array(7)].map((_, index) => (
                         <React.Fragment key={index}>
-                            <div className={`circle ${index <= currentIndex ? 'active' : ''}`}>
-                                <div className={`checkmark ${index <= currentIndex ? 'active_check' : ''}`}></div>
+                            <div className={`circle ${index <= currentIndex-1 ? 'active' : ''}`}>
+                                <div className={`checkmark ${index <= currentIndex-1 ? 'active_check' : ''}`}></div>
                             </div>
                             {index < 6 && (
-                                <div className={`dotted_line ${index < currentIndex ? 'active_dotted' : ''}`} id={index + 1}></div>
+                                <div className={`dotted_line ${index < currentIndex? 'active_dotted' : ''}`} id={index + 1}></div>
                             )}
                         </React.Fragment>
                     ))}

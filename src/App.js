@@ -31,7 +31,7 @@ function App() {
     { question: 'Any appreciation for a facilitator/ exhibit/ experience you had here today?', answer: '' },
     // ...
   ]);
-
+  const [selectedDiv, setSelectedDiv] = useState(-1); // New state to track the selected div
   const [display_qaList, setDisplay_qaList] = useState([
     {
       id: 0,
@@ -86,6 +86,7 @@ function App() {
       if (currentIndex < display_qaList.length ) {
           setCurrentIndex(currentIndex + 1);
       }
+     setSelectedDiv(-1);
   };
   const handleBackClick = () => {
     if (currentIndex > 0) {
@@ -127,7 +128,7 @@ const handleSubmit = async () => {
 
   return (
     <div className='App'>
-      <QAcontext.Provider value={{ qaList, setQaList, display_qaList, setDisplay_qaList,handleNextClick,currentQA, handleBackClick,currentIndex ,setQaList,handleSubmit}}>
+      <QAcontext.Provider value={{ qaList, setQaList, display_qaList, setDisplay_qaList,handleNextClick,currentQA, handleBackClick,currentIndex ,setQaList,handleSubmit,selectedDiv,setSelectedDiv}}>
 
         <Page />
 

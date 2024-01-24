@@ -3,8 +3,12 @@ import './Display.css'
 import { useContext, useState } from 'react'
 import { QAcontext } from '../createContext/createContext'
 function Display() {
-    const { display_qaList, handleNextClick, currentQA, qaList, setQaList, currentIndex } = useContext(QAcontext)
-    const handleClick = (selectedAnswer) => {
+    const { display_qaList, handleNextClick, currentQA, qaList, setQaList, currentIndex,selectedDiv,setSelectedDiv } = useContext(QAcontext)
+    
+
+    const handleClick = (selectedAnswer,index) => {
+        setSelectedDiv(index); // Set the selected div index
+
         const newQaList = qaList.map((item, index) => {
             if (index === currentIndex) {
                 return { ...item, answer: selectedAnswer };
@@ -37,7 +41,7 @@ function Display() {
                 {currentQA.image ? (
                     <div className='display_image'>
                         {currentQA.image.map((img, index) => (
-                            <div key={index} className='button' onClick={() => handleClick(currentQA.display_names[index])}>
+                            <div key={index} className='button' onClick={() => handleClick(currentQA.display_names[index],index)}  style={{ opacity: selectedDiv === -1 || selectedDiv === index ? 1 : 0.5 }} >
                                 <img src={img} alt={currentQA.display_names[index]} />
                                 <span className="names">{currentQA.display_names[index]}</span>
                             </div>
