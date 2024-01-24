@@ -2,7 +2,7 @@ import React, { useEffect, useState ,useRef} from 'react';
 
 function UsePreventZoom(scrollCheck = true, keyboardCheck = true, touchCheck = true) {
   const [lastTapTime, setLastTapTime] = useState(0);
-
+  const lastTapTimeRef = useRef(new Date().getTime());
   useEffect(() => {
     const handleKeydown = (e) => {
       if (
@@ -32,7 +32,7 @@ function UsePreventZoom(scrollCheck = true, keyboardCheck = true, touchCheck = t
       }
     };
 
-    const lastTapTimeRef = useRef(new Date().getTime());
+   
 
     const handleTouchEnd = (e) => {
       const currentTime = new Date().getTime();
