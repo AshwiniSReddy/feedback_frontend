@@ -25,11 +25,11 @@ function Page() {
                     {/* Loop to create circles and dotted lines */}
                     {[...Array(7)].map((_, index) => (
                         <React.Fragment key={index}>
-                            <div className={`circle ${index <= currentIndex-1 ? 'active' : ''}`}>
-                                <div className={`checkmark ${index <= currentIndex-1 ? 'active_check' : ''}`}></div>
+                            <div className={`circle ${index <= currentIndex - 1 ? 'active' : ''}`}>
+                                <div className={`checkmark ${index <= currentIndex - 1 ? 'active_check' : ''}`}></div>
                             </div>
                             {index < 6 && (
-                                <div className={`dotted_line ${index < currentIndex? 'active_dotted' : ''}`} id={index + 1}></div>
+                                <div className={`dotted_line ${index < currentIndex ? 'active_dotted' : ''}`} id={index + 1}></div>
                             )}
                         </React.Fragment>
                     ))}
@@ -46,7 +46,14 @@ function Page() {
             </div> : <div className='message'><div className='message_inner'>Your feedback means a lot to us. Thank you!</div></div>}
             <div className='buttons'>
                 {currentIndex != 0 ? <div className='back'><button onClick={handleBackClick}>Back</button></div> : ""}
-                <div className='next'>{currentIndex > 6 ? <button onClick={handleSubmit}>Submit</button> : <button onClick={handleNextClick}>Next</button>}</div>
+                <div className='next'>
+                    {currentIndex > 6 ? (
+                        <button onClick={handleSubmit}>Submit</button>
+                    ) : !currentQA.image ? (
+                        <button onClick={handleNextClick}>Next</button>
+                    ) : null}
+                </div>
+
             </div>
 
         </div>

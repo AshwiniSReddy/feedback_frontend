@@ -41,7 +41,10 @@ function Display() {
                 {currentQA.image ? (
                     <div className='display_image'>
                         {currentQA.image.map((img, index) => (
-                            <div key={index} className='button' onClick={() => handleClick(currentQA.display_names[index],index)}  style={{ opacity: selectedDiv === -1 || selectedDiv === index ? 1 : 0.5 }} >
+                            <div key={index} className='button'   onClick={() => {
+                                handleClick(currentQA.display_names[index], index);
+                                handleNextClick();
+                            }}  style={{ opacity: selectedDiv === -1 || selectedDiv === index ? 1 : 0.5 }} >
                                 <img src={img} alt={currentQA.display_names[index]} />
                                 <span className="names">{currentQA.display_names[index]}</span>
                             </div>

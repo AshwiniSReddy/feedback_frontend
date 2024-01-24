@@ -113,6 +113,8 @@ const handleSubmit = async () => {
           const data = await response.json();
           console.log('Feedback submitted:', data);
           // Handle successful submission (e.g., show a message or redirect)
+          setCurrentIndex(0); // Reset to the first question
+          setSelectedDiv(-1); // Optionally reset selectedDiv if needed
       } else {
           console.error('Failed to submit feedback');
           // Handle errors (e.g., show an error message)
