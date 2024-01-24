@@ -116,6 +116,8 @@ const handleSubmit = async () => {
           setTimeout(()=>{
             setCurrentIndex(0); // Reset to the first question
             setSelectedDiv(-1); // Optionally reset selectedDiv if needed
+            // Reset qaList, clearing all answer fields
+            setQaList(qaList.map(item => ({ ...item, answer: '' })));
           },4000)
           
       } else {
