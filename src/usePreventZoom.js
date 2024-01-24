@@ -32,15 +32,17 @@ function UsePreventZoom(scrollCheck = true, keyboardCheck = true, touchCheck = t
       }
     };
 
+    const lastTapTimeRef = useRef(new Date().getTime());
+
     const handleTouchEnd = (e) => {
       const currentTime = new Date().getTime();
-      const tapLength = currentTime - lastTapTime;
+      const tapLength = currentTime - lastTapTimeRef.current;
       if (touchCheck && tapLength < 500 && tapLength > 0) {
-        // Detected a double tap
         e.preventDefault();
       }
-      setLastTapTime(currentTime);
+      lastTapTimeRef.current = currentTime;
     };
+    
 
     // Add event listeners
     document.addEventListener('keydown', handleKeydown);
