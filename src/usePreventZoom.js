@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-function usePreventZoom(scrollCheck = true, keyboardCheck = true, touchCheck = true) {
+function UsePreventZoom(scrollCheck = true, keyboardCheck = true, touchCheck = true) {
   useEffect(() => {
     const handleKeydown = (e) => {
       if (
@@ -44,4 +44,4 @@ function usePreventZoom(scrollCheck = true, keyboardCheck = true, touchCheck = t
   return null;
 }
 
-export default usePreventZoom;
+export default UsePreventZoom;

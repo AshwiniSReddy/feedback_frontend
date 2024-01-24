@@ -18,7 +18,7 @@ import quality from './images/Best exhibits icon.svg'
 import value_for_money from './images/Rupee icon.svg'
 import interaction from './images/Touch icon.svg'
 import explaination from './images/Conversation icon.svg'
-import usePreventZoom from './usePreventZoom';
+import UsePreventZoom from './usePreventZoom';
 
 
 
@@ -131,9 +131,9 @@ const handleSubmit = async () => {
   return (
     <div className='App'>
       <QAcontext.Provider value={{ qaList, setQaList, display_qaList, setDisplay_qaList,handleNextClick,currentQA, handleBackClick,currentIndex ,setQaList,handleSubmit,selectedDiv,setSelectedDiv}}>
-       <usePreventZoom/>
+       <UsePreventZoom/>
         <Page />
-
+      
       </QAcontext.Provider>
     </div>
 
