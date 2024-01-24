@@ -4,6 +4,10 @@
   height: 1200px;
   font-family: 'DM Sans', sans-serif;
   overflow-y: hidden;
+  
+}
+.App::-webkit-scrollbar {
+  display: none;
 }
 
 .App-logo {
