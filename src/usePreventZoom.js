@@ -31,6 +31,11 @@ function UsePreventZoom(scrollCheck = true, keyboardCheck = true, touchCheck = t
         e.preventDefault();
       }
     };
+    const handleTouchStart = (e) => {
+      if (touchCheck && e.touches.length > 1) {
+        e.preventDefault();
+      }
+    };
 
    
 
@@ -48,6 +53,7 @@ function UsePreventZoom(scrollCheck = true, keyboardCheck = true, touchCheck = t
     document.addEventListener('keydown', handleKeydown);
     document.addEventListener('wheel', handleWheel, { passive: false });
     document.addEventListener('touchmove', handleTouchMove, { passive: false });
+    document.addEventListener('touchstart', handleTouchStart, { passive: false });
     document.addEventListener('touchend', handleTouchEnd, { passive: false });
 
     // Cleanup function
@@ -56,6 +62,7 @@ function UsePreventZoom(scrollCheck = true, keyboardCheck = true, touchCheck = t
       document.removeEventListener('wheel', handleWheel);
       document.removeEventListener('touchmove', handleTouchMove);
       document.removeEventListener('touchend', handleTouchEnd);
+      document.removeEventListener('touchstart', handleTouchStart);
     };
   }, [scrollCheck, keyboardCheck, touchCheck, lastTapTime]);
 
