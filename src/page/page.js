@@ -1,12 +1,17 @@
 import React from 'react'
 import { QAcontext } from '../createContext/createContext'
-import { useContext } from 'react'
+import { useContext,useEffect } from 'react'
 import Display from '../Display/Display'
 import './page.css'
 
 
 function Page() {
     const { qaList, handleNextClick, currentQA, handleBackClick, currentIndex, handleSubmit } = useContext(QAcontext);
+    useEffect(() => {
+        if (currentIndex >6) {
+            handleSubmit();
+        }
+    }, [currentIndex, handleSubmit]);
     return (
         <div className='feedbackmain'>
             <div className='feedback_inner'>
@@ -45,10 +50,10 @@ function Page() {
                 <Display />
             </div> : <div className='message'><div className='message_inner'>Your feedback means a lot to us. Thank you!</div></div>}
             <div className='buttons'>
-                {currentIndex != 0 ? <div className='back'><button onClick={handleBackClick}>Back</button></div> : ""}
+                {currentIndex != 0 && currentIndex <6 ? <div className='back'><button onClick={handleBackClick}>Back</button></div> : ""}
                 <div className='next'>
                     {currentIndex > 6 ? (
-                        <button onClick={handleSubmit}>Submit</button>
+                        <></>
                     ) : !currentQA.image ? (
                         <button onClick={handleNextClick}>Next</button>
                     ) : null}
