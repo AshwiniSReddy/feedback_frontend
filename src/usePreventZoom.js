@@ -37,7 +37,7 @@ function UsePreventZoom(scrollCheck = true, keyboardCheck = true, touchCheck = t
     const handleTouchEnd = (e) => {
       const currentTime = new Date().getTime();
       const tapLength = currentTime - lastTapTimeRef.current;
-      if (touchCheck && tapLength < 1000 && tapLength > 0) {
+      if (touchCheck && tapLength < 300 && tapLength > 0) {
         e.preventDefault();
       }
       lastTapTimeRef.current = currentTime;
