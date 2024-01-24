@@ -3,7 +3,7 @@
   width: 1920px;
   height: 1200px;
   font-family: 'DM Sans', sans-serif;
-  overflow: hidden;
+  overflow-y: hidden;
 }
 
 .App-logo {
