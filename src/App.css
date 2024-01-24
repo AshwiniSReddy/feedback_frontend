@@ -1,9 +1,9 @@
 .App {
   text-align: center;
   width: 1920px;
-  height: 1100px;
+  height: 1200px;
   font-family: 'DM Sans', sans-serif;
-  
+  overflow: hidden;
 }
 
 .App-logo {
