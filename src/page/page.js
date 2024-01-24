@@ -54,3 +54,6 @@ function Page() {
 }
 
 export default Page
+
+
+// next -padding ,display box -size increase, disable zoom in , kiosk mode .             
