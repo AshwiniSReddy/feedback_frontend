@@ -1,9 +1,20 @@
-import { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 function UsePreventZoom(scrollCheck = true, keyboardCheck = true, touchCheck = true) {
+  const [lastTapTime, setLastTapTime] = useState(0);
+
   useEffect(() => {
     const handleKeydown = (e) => {
-      if (keyboardCheck && e.ctrlKey && [61, 107, 173, 109, 187, 189].includes(e.keyCode)) {
+      if (
+        keyboardCheck &&
+        e.ctrlKey &&
+        (e.keyCode === 61 ||
+          e.keyCode === 107 ||
+          e.keyCode === 173 ||
+          e.keyCode === 109 ||
+          e.keyCode === 187 ||
+          e.keyCode === 189)
+      ) {
         e.preventDefault();
       }
     };
@@ -16,34 +27,35 @@ function UsePreventZoom(scrollCheck = true, keyboardCheck = true, touchCheck = t
 
     const handleTouchMove = (e) => {
       if (touchCheck && e.touches.length > 1) {
+        // Prevent default action if more than one finger is used (pinch gesture)
         e.preventDefault();
       }
     };
 
     const handleTouchEnd = (e) => {
-      if (touchCheck) {
-        const timeBetweenTaps = e.timeStamp - this.lastTap;
-        if (timeBetweenTaps < 500 && timeBetweenTaps > 0) {
-          e.preventDefault();
-        }
-        this.lastTap = e.timeStamp;
+      const currentTime = new Date().getTime();
+      const tapLength = currentTime - lastTapTime;
+      if (touchCheck && tapLength < 500 && tapLength > 0) {
+        // Detected a double tap
+        e.preventDefault();
       }
+      setLastTapTime(currentTime);
     };
 
-    // Add event listeners with capture: true
-    document.addEventListener('keydown', handleKeydown, { passive: false, capture: true });
-    document.addEventListener('wheel', handleWheel, { passive: false, capture: true });
-    document.addEventListener('touchmove', handleTouchMove, { passive: false, capture: true });
-    document.addEventListener('touchend', handleTouchEnd, { passive: false, capture: true });
+    // Add event listeners
+    document.addEventListener('keydown', handleKeydown);
+    document.addEventListener('wheel', handleWheel, { passive: false });
+    document.addEventListener('touchmove', handleTouchMove, { passive: false });
+    document.addEventListener('touchend', handleTouchEnd, { passive: false });
 
     // Cleanup function
     return () => {
-      document.removeEventListener('keydown', handleKeydown, { capture: true });
-      document.removeEventListener('wheel', handleWheel, { capture: true });
-      document.removeEventListener('touchmove', handleTouchMove, { capture: true });
-      document.removeEventListener('touchend', handleTouchEnd, { capture: true });
+      document.removeEventListener('keydown', handleKeydown);
+      document.removeEventListener('wheel', handleWheel);
+      document.removeEventListener('touchmove', handleTouchMove);
+      document.removeEventListener('touchend', handleTouchEnd);
     };
-  }, [scrollCheck, keyboardCheck, touchCheck]);
+  }, [scrollCheck, keyboardCheck, touchCheck, lastTapTime]);
 
   return null;
 }
