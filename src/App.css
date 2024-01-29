@@ -1,8 +1,8 @@
 .App {
   position: relative;
   text-align: center;
-  width: 1920px;
-  height: 1148px;
+  min-width: 1080px;
+  height: 1920px;
   font-family: 'DM Sans', sans-serif;
   overflow-y: hidden;
   

@@ -122,7 +122,7 @@
 }
 
 .dotted_line {
-    width: 129px;
+    width: 100px;
     height: 0px;
     /* UI Properties */
     box-shadow: 0px 0px 12px #0000000F;
