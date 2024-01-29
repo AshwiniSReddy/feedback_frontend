@@ -133,7 +133,7 @@ const handleSubmit = async () => {
 
 
   const currentQA = display_qaList[currentIndex];
-  console.log(qaList,"qalist")
+  // console.log(qaList,"qalist")
 
   return (
     <div className='App'>
