@@ -2,6 +2,7 @@
   "name": "feedback_frontend",
   "version": "0.1.0",
   "private": true,
+  "proxy":"http://feedbackuser.s3-website.ap-south-1.amazonaws.com/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
