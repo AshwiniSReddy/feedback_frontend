@@ -50,7 +50,7 @@ function Page() {
                 <Display />
             </div> : <div className='message'><div className='message_inner'>Your feedback means a lot to us. Thank you!</div></div>}
             <div className='buttons'>
-                {currentIndex != 0 && currentIndex <6 ? <div className='back'><button onClick={handleBackClick}>Back</button></div> : ""}
+                {currentIndex != 0 && currentIndex <=6 ? <div className='back'><button onClick={handleBackClick}>Back</button></div> : ""}
                 <div className='next'>
                     {currentIndex > 6 ? (
                         <></>
