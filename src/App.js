@@ -3,8 +3,10 @@ import './App.css';
 import { QAcontext } from './createContext/createContext';
 import { useState } from 'react';
 import Page from './page/page';
-import male from './images/Male icon.svg'
-import female from './images/Female icon.svg'
+import male from './images/MaleIcon.svg'
+import female from './images/FemaleIcon.svg'
+import others from './images/OthersIcon.svg'
+import preferNotToSay from './images/Prefer not to say icon.svg'
 import none from './images/None icon.svg'
 import knowledge from './images/Bulb icon.svg'
 import entertainment from './images/Entertainment happy icon.svg'
@@ -40,8 +42,8 @@ function App() {
     {
       id: 0,
       question: 'Please select your gender',
-      image: [male, female, none],
-      display_names: ["Male", "Female", "both"]
+      image: [male, female,others,preferNotToSay],
+      display_names: ["Male", "Female", "Others","Prefer not to say"]
     },
     {
       id: 1,
