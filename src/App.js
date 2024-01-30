@@ -125,7 +125,7 @@ const handleSubmit = async () => {
     setCurrentIndex(currentIndex + 1);
 }
   try {   
-      const response = await fetch('http://65.1.92.198/api', {
+      const response = await fetch('http://13.232.29.15/api', {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json',
