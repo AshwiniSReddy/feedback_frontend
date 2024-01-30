@@ -3,7 +3,18 @@ import './Display.css'
 import { useContext, useState } from 'react'
 import { QAcontext } from '../createContext/createContext'
 function Display() {
-    const { display_qaList, handleNextClick, currentQA, qaList, setQaList, currentIndex,selectedDiv,setSelectedDiv } = useContext(QAcontext)
+    const { display_qaList, handleNextClick, currentQA, qaList, setQaList, currentIndex,selectedDiv,setSelectedDiv,validationMessage,setValidationMessage } = useContext(QAcontext)
+    const handleKeyPress = (e) => {
+        if (e.key === 'Enter') {
+            e.preventDefault(); // Prevent the default action of Enter key (new line)
+            if (!qaList[currentIndex].answer.trim()) {
+                setValidationMessage('This field is required'); // Set the validation message
+            } else {
+                setValidationMessage(''); // Clear any previous validation messages
+                handleNextClick(); // Move to the next question
+            }
+        }
+    };
     
 
     const handleClick = (selectedAnswer,index) => {
@@ -28,7 +39,7 @@ function Display() {
         setQaList(newQaList);
     };
       // Determine if the custom style should be applied
-      const customStyle = [1, 5, 6].includes(currentIndex) ? { width: '821px', height: '266px' } : {width:'821px',height:'354px'};
+      const customStyle = [1, 5, 6].includes(currentIndex) ? { width: '80vw', height: '18vh' ,gap:"3vw"} : {width:'80vh',height:'28vh'};
 
 
 
@@ -57,7 +68,9 @@ function Display() {
                             placeholder="Your answer"
                             value={qaList[currentIndex].answer}
                             onChange={handleTextareaChange}
+                            onKeyDown={handleKeyPress} // Add this line
                         />
+                         {validationMessage && <div className="validation-message">{validationMessage}</div>} {/* Display the validation message if it exists */}
                     </div>
                 )}
             </div>

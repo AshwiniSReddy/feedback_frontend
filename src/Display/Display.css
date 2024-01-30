@@ -13,6 +13,11 @@
 
 }
 
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url('../helveticaneue.ttf')
+}
+
 .display_question {
     width: 100%;
 
@@ -25,16 +30,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 25%;
 }
 
 .display_question_inner {
     width: 619px;
     height: 49px;
     text-align: center;
-    font: normal normal medium 20px/25px Helvetica Neue;
+    font-family: "Helvetica Neue";
+    font: normal normal medium 30px/39px Helvetica Neue;
+
     letter-spacing: 1px;
     color: #000000;
     opacity: 1;
+    height: 50%;
 }
 
 .display_image {
@@ -43,6 +52,7 @@
     justify-content: center;
     align-items: center;
     gap: 57px;
+    height: 100%;
 }
 
 .button {
@@ -56,6 +66,7 @@
     align-items: center;
     flex-direction: column;
     gap: 29px;
+    height: 100%;
 }
 
 .button img {
@@ -64,6 +75,8 @@
     /* UI Properties */
 
     opacity: 1;
+    height: 50%;
+    width: 100%;
 }
 
 .next {
@@ -91,7 +104,8 @@
     height: 20px;
     /* UI Properties */
     text-align: center;
-    font: normal normal 600 15px/20px DM Sans;
+    font: normal normal 600 22px/25px DM Sans;
+
     letter-spacing: 0.75px;
     color: #777778;
     text-transform: capitalize;
@@ -104,6 +118,9 @@
     flex-direction: column;
     height: 93px;
     gap: 57px;
+    font: normal normal 600 30px/39px Helvetica Neue;
+    height: 50%;
+
 }
 
 .display_textarea {
@@ -111,12 +128,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
+    margin-top: 2%;
+    flex-direction: column;
+    gap: 1vw;
     opacity: 1;
 }
 
 textarea {
-    width: 327px;
+    /* width: 327px; */
+    width: 50%;
     height: 47px;
     /* UI Properties */
     background: #FFFFFF 0% 0% no-repeat padding-box;
@@ -144,4 +164,9 @@ textarea {
     opacity: 0.5;
     /* padding-top: 12px;
     padding-left: 25px; */
+}
+
+.validation-message {
+    color: red;
+    margin-top: 5px;
 }

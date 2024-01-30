@@ -26,17 +26,17 @@
 .feedback_inner {
     display: flex;
     flex-direction: column;
-    gap: 26px;
+    gap: 3vw;
     width: 100%;
     margin-top: 114px;
 }
 
 .head {
-    width: 417px;
+    /* width: 417px; */
     height: 52px;
     /* UI Properties */
     text-align: left;
-    font: normal normal bold 40px/52px DM Sans;
+    font: normal normal bold 50px/62px DM Sans;
     letter-spacing: 2px;
     color: #0D0000;
     text-transform: capitalize;
@@ -68,7 +68,7 @@
     /* UI Properties */
     text-align: center;
     /* font-family: "Helvetica Neue"; */
-    font: normal normal normal 20px/24px Helvetica Neue;
+    font: normal normal normal 30px/39px Helvetica Neue;
     letter-spacing: 1px;
     color: #777778;
     opacity: 1;
@@ -122,7 +122,7 @@
 }
 
 .dotted_line {
-    width: 100px;
+    width: 90px;
     height: 0px;
     /* UI Properties */
     box-shadow: 0px 0px 12px #0000000F;

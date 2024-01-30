@@ -34,6 +34,8 @@ function App() {
     // ...
   ]);
   const [selectedDiv, setSelectedDiv] = useState(-1); // New state to track the selected div
+  const [isRequired, setisRequired]=useState(false);
+  const [validationMessage, setValidationMessage] = useState(''); // New state for validation messages
   const [display_qaList, setDisplay_qaList] = useState([
     {
       id: 0,
@@ -84,12 +86,32 @@ function App() {
 
   ])
   const [currentIndex, setCurrentIndex] = useState(0);
+  // const handleNextClick = () => {
+  //     if (currentIndex < display_qaList.length ) {
+  //         setCurrentIndex(currentIndex + 1);
+  //     }
+  //    setSelectedDiv(-1);
+  // };
+
+
   const handleNextClick = () => {
-      if (currentIndex < display_qaList.length ) {
-          setCurrentIndex(currentIndex + 1);
-      }
-     setSelectedDiv(-1);
+    const currentAnswer = qaList[currentIndex].answer;
+    const isAnswerRequired = currentQA.image === null; // Assuming questions with no image require a text answer
+  
+    // Check if the answer is required and the current answer is empty
+    if (isAnswerRequired && !currentAnswer.trim()) {
+      setValidationMessage('This field is required'); // Set the validation message
+      return; // Exit the function to prevent moving to the next question
+    }
+  
+    // If the answer is provided or not required, clear any previous validation messages and move to the next question
+    setValidationMessage('');
+    if (currentIndex < display_qaList.length) {
+      setCurrentIndex(currentIndex + 1);
+    }
+    setSelectedDiv(-1); // Reset selected option for multiple-choice questions
   };
+  
   const handleBackClick = () => {
     if (currentIndex > 0) {
         setCurrentIndex(currentIndex - 1);
@@ -137,7 +159,7 @@ const handleSubmit = async () => {
 
   return (
     <div className='App'>
-      <QAcontext.Provider value={{ qaList, setQaList, display_qaList, setDisplay_qaList,handleNextClick,currentQA, handleBackClick,currentIndex ,setQaList,handleSubmit,selectedDiv,setSelectedDiv}}>
+      <QAcontext.Provider value={{ qaList, setQaList, display_qaList, setDisplay_qaList,handleNextClick,currentQA, handleBackClick,currentIndex ,setQaList,handleSubmit,selectedDiv,setSelectedDiv,isRequired,setisRequired,validationMessage,setValidationMessage}}>
        <UsePreventZoom/>
         <Page />
       

@@ -9,6 +9,9 @@
 }
 body {
   touch-action: manipulation; /* This allows panning and single-finger gestures but not pinch zoom */
+
+    
+
 }
 
 .App::-webkit-scrollbar {
