@@ -31,8 +31,8 @@ function App() {
     { question: 'What did you gain the most from PARSEC', answer: '' },
     { question: 'How satisfied are you with your visit to PARSEC?', answer: '' },
     { question: 'What could we improve?', answer: '' },
-    { question: 'Any suggestions or specific bad experience you would like to bring to our notice?', answer: '' },
-    { question: 'Any appreciation for a facilitator/ exhibit/ experience you had here today?', answer: '' },
+    // { question: 'Any suggestions or specific bad experience you would like to bring to our notice?', answer: '' },
+    // { question: 'Any appreciation for a facilitator/ exhibit/ experience you had here today?', answer: '' },
     // ...
   ]);
   const [selectedDiv, setSelectedDiv] = useState(-1); // New state to track the selected div
