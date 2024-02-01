@@ -71,18 +71,18 @@ function App() {
       display_names: ["Quatity of exhibit", "Value for money", "Interactivity of exhibit", "explanation of exhibit"]
 
     },
-    {
-      id: 5,
-      question: 'Any suggestions or specific bad experience you would like to bring to our notice?',
-      image: null,
-      display_names: ["Your answer"]
-    },
-    {
-      id: 6,
-      question: 'Any appreciation for a facilitator/ exhibit/ experience you had here today?',
-      image: null,
-      display_names: ["Your answer"]
-    },
+    // {
+    //   id: 5,
+    //   question: 'Any suggestions or specific bad experience you would like to bring to our notice?',
+    //   image: null,
+    //   display_names: ["Your answer"]
+    // },
+    // {
+    //   id: 6,
+    //   question: 'Any appreciation for a facilitator/ exhibit/ experience you had here today?',
+    //   image: null,
+    //   display_names: ["Your answer"]
+    // },
    
 
 

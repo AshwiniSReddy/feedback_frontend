@@ -39,7 +39,7 @@ function Display() {
         setQaList(newQaList);
     };
       // Determine if the custom style should be applied
-      const customStyle = [1, 5, 6].includes(currentIndex) ? { width: '80vw', height: '18vh' ,gap:"3vw"} : {width:'80vh',height:'28vh'};
+      const customStyle = [1].includes(currentIndex) ? { width: '80vw', height: '18vh' ,gap:"3vw"} : {width:'80vh',height:'28vh'};
 
 
 
