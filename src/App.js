@@ -11,6 +11,7 @@ import none from './images/None icon.svg'
 import knowledge from './images/Bulb icon.svg'
 import entertainment from './images/Entertainment happy icon.svg'
 import both from './images/Knowledge and entertainment icon.svg'
+import perfect from './images/Perfect icon.svg'
 import react1 from './images/1 reaction icon.svg'
 import react2 from './images/2 reaction icon.svg'
 import react3 from './images/3 reaction icon.svg'
@@ -67,8 +68,8 @@ function App() {
     {
       id: 4,
       question: 'What could we improve?',
-      image: [quality, value_for_money, interaction, explaination],
-      display_names: ["Quatity of exhibit", "Value for money", "Interactivity of exhibit", "explanation of exhibit"]
+      image: [quality, value_for_money, interaction, explaination,perfect],
+      display_names: ["Quatity of exhibit", "Value for money", "Interactivity of exhibit", "explanation of exhibit","Everything is fine"]
 
     },
     // {
