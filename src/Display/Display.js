@@ -2,8 +2,10 @@ import React from 'react'
 import './Display.css'
 import { useContext, useState } from 'react'
 import { QAcontext } from '../createContext/createContext'
+import '../../node_modules/rsuite/dist/rsuite.css';
+import { Slider } from 'rsuite';
 function Display() {
-    const { display_qaList, handleNextClick, currentQA, qaList, setQaList, currentIndex,selectedDiv,setSelectedDiv,validationMessage,setValidationMessage } = useContext(QAcontext)
+    const { display_qaList, handleNextClick, currentQA, qaList, setQaList, currentIndex, selectedDiv, setSelectedDiv, validationMessage, setValidationMessage } = useContext(QAcontext)
     const handleKeyPress = (e) => {
         if (e.key === 'Enter') {
             e.preventDefault(); // Prevent the default action of Enter key (new line)
@@ -15,9 +17,25 @@ function Display() {
             }
         }
     };
-    
 
-    const handleClick = (selectedAnswer,index) => {
+    const handleSliderTouch = (e) => {
+        // Get touch details
+        const touch = e.touches[0];
+        const slider = e.currentTarget;
+
+        // Calculate the touch position relative to the slider
+        const touchPosition = (touch.clientX - slider.getBoundingClientRect().left) / slider.offsetWidth;
+
+        // Calculate the new value based on touch position
+        // Assuming the slider's min is 10, max is 100
+        const newValue = 5 + touchPosition * (60 - 10);
+        const intValue = Math.round(newValue);
+        // Update the slider's value
+        handleTextareaChange(intValue);
+    };
+
+
+    const handleClick = (selectedAnswer, index) => {
         setSelectedDiv(index); // Set the selected div index
 
         const newQaList = qaList.map((item, index) => {
@@ -29,17 +47,17 @@ function Display() {
         setQaList(newQaList);
     };
     const handleTextareaChange = (e) => {
-        const updatedAnswer = e.target.value;
+        // const updatedAnswer = e.target.value;
         const newQaList = qaList.map((item, index) => {
             if (index === currentIndex) {
-                return { ...item, answer: updatedAnswer };
+                return { ...item, answer: e };
             }
             return item;
         });
         setQaList(newQaList);
     };
-      // Determine if the custom style should be applied
-      const customStyle = [1].includes(currentIndex) ? { width: '80vw', height: '18vh' ,gap:"3vw"} : {width:'80vh',height:'28vh'};
+    // Determine if the custom style should be applied
+    const customStyle = [1].includes(currentIndex) ? { width: '80vw', height: '18vh', gap: "3vw" } : { width: '80vh', height: '28vh' };
 
 
 
@@ -52,10 +70,10 @@ function Display() {
                 {currentQA.image ? (
                     <div className='display_image'>
                         {currentQA.image.map((img, index) => (
-                            <div key={index} className='button'   onClick={() => {
+                            <div key={index} className='button' onClick={() => {
                                 handleClick(currentQA.display_names[index], index);
                                 handleNextClick();
-                            }}  style={{ opacity: selectedDiv === -1 || selectedDiv === index ? 1 : 0.5 }} >
+                            }} style={{ opacity: selectedDiv === -1 || selectedDiv === index ? 1 : 0.5 }} >
                                 <img src={img} alt={currentQA.display_names[index]} />
                                 <span className="names">{currentQA.display_names[index]}</span>
                             </div>
@@ -64,13 +82,28 @@ function Display() {
                 ) : (
                     <div className='display_textarea'>
 
-                        <textarea
+                        {/* <textarea
                             placeholder="Your answer"
                             value={qaList[currentIndex].answer}
                             onChange={handleTextareaChange}
                             onKeyDown={handleKeyPress} // Add this line
-                        />
-                         {validationMessage && <div className="validation-message">{validationMessage}</div>} {/* Display the validation message if it exists */}
+                        /> */}
+                        <div style={{
+                            display: 'block', width: 600, paddingLeft: 30
+                        }}>
+                            <Slider
+                                max={60}
+                                min={5}
+                                // step={10}
+                                defaultValue={33}
+                                // graduated
+                                value={qaList[currentIndex].answer}
+                                progress
+                                onChange={handleTextareaChange}
+                                onTouchMove={handleSliderTouch} // Handle touch move on the slider
+                            />
+                        </div>
+                        {validationMessage && <div className="validation-message">{validationMessage}</div>} {/* Display the validation message if it exists */}
                     </div>
                 )}
             </div>

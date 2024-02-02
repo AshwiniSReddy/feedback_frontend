@@ -102,7 +102,7 @@ function App() {
     const isAnswerRequired = currentQA.image === null; // Assuming questions with no image require a text answer
   
     // Check if the answer is required and the current answer is empty
-    if (isAnswerRequired && !currentAnswer.trim()) {
+    if (isAnswerRequired && !currentAnswer) {
       setValidationMessage('This field is required'); // Set the validation message
       return; // Exit the function to prevent moving to the next question
     }
