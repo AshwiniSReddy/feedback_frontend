@@ -88,6 +88,7 @@ function Display() {
                             onChange={handleTextareaChange}
                             onKeyDown={handleKeyPress} // Add this line
                         /> */}
+                        {/* <div><h2>Age:{qaList[currentIndex].answer}</h2></div> */}
                         <div style={{
                             display: 'block', width: 600, paddingLeft: 30
                         }}>

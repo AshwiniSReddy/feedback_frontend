@@ -173,17 +173,17 @@ textarea {
     margin-top: 5px;
 }
 
-/* Custom Slider Styles */
+Custom Slider Styles
 .rs-slider .rs-slider-handle {
-    background-color: green !important; /* Color for the knob */
+    background-color: green !important; 
   }
   
   .rs-slider .rs-slider-progress {
-    background-color: green !important; /* Color for the progress */
+    background-color: green !important; 
   }
   
   .rs-slider .rs-slider-rail {
-    background-color: lightgreen !important; /* Color for the bar */
+    background-color: lightgreen !important; 
   }
 
   

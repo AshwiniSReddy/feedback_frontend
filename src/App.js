@@ -61,15 +61,14 @@ function App() {
     {
       id: 3,
       question: 'How satisfied are you with your visit to PARSEC?',
-      image: [react1, react2, react3, react4, react5],
-      display_names: ["Excellent", "Good", "Average", "Poor", "Worst"]
-
+      image: [react5, react4, react3, react2, react1],
+      display_names: ["Worst", "Poor", "Average", "Good", "Excellent"]
     },
     {
       id: 4,
       question: 'What could we improve?',
       image: [quality, value_for_money, interaction, explaination,perfect],
-      display_names: ["Quatity of exhibit", "Value for money", "Interactivity of exhibit", "explanation of exhibit","Everything is fine"]
+      display_names: ["Quality of exhibit", "Value for money", "Interactivity of exhibit", "explanation of exhibit","Everything is fine"]
 
     },
     // {
