@@ -18,21 +18,42 @@ function Display() {
         }
     };
 
+    // const handleSliderTouch = (e) => {
+    //     // Get touch details
+    //     const touch = e.touches[0];
+    //     const slider = e.currentTarget;
+
+    //     // Calculate the touch position relative to the slider
+    //     const touchPosition = (touch.clientX - slider.getBoundingClientRect().left) / slider.offsetWidth;
+
+    //     // Calculate the new value based on touch position
+    //     // Assuming the slider's min is 10, max is 100
+    //     const newValue = 5 + touchPosition * (60 - 10);
+    //     const intValue = Math.round(newValue);
+    //     // Update the slider's value
+    //     handleTextareaChange(intValue);
+    // };
     const handleSliderTouch = (e) => {
         // Get touch details
         const touch = e.touches[0];
         const slider = e.currentTarget;
-
+    
         // Calculate the touch position relative to the slider
         const touchPosition = (touch.clientX - slider.getBoundingClientRect().left) / slider.offsetWidth;
-
+    
         // Calculate the new value based on touch position
-        // Assuming the slider's min is 10, max is 100
-        const newValue = 5 + touchPosition * (60 - 10);
+        // Assuming the slider's min is 5, max is 60
+        let newValue = 5 + touchPosition * (65 - 5);
+    
+        // Limit the newValue to the range 5 to 60
+        newValue = Math.max(5, Math.min(newValue, 65));
+    
         const intValue = Math.round(newValue);
+        
         // Update the slider's value
         handleTextareaChange(intValue);
     };
+    
 
 
     const handleClick = (selectedAnswer, index) => {
@@ -59,7 +80,11 @@ function Display() {
     // Determine if the custom style should be applied
     const customStyle = [1].includes(currentIndex) ? { width: '80vw', height: '18vh', gap: "3vw" } : { width: '80vh', height: '28vh' };
 
-
+    const handleBarClick = (value) => {
+        // Update the slider's value
+        handleTextareaChange(value);
+    };
+    
 
     return (
         <div className='display' style={customStyle}>
@@ -88,12 +113,12 @@ function Display() {
                             onChange={handleTextareaChange}
                             onKeyDown={handleKeyPress} // Add this line
                         /> */}
-                        {/* <div><h2>Age:{qaList[currentIndex].answer}</h2></div> */}
-                        <div style={{
+                        <div className='agehead'><h2>Age:<span className='agenum'>{qaList[currentIndex].answer}</span></h2></div>
+                        <div  className="sliderRange" style={{
                             display: 'block', width: 600, paddingLeft: 30
                         }}>
                             <Slider
-                                max={60}
+                                max={65}
                                 min={5}
                                 // step={10}
                                 defaultValue={33}
@@ -103,6 +128,16 @@ function Display() {
                                 onChange={handleTextareaChange}
                                 onTouchMove={handleSliderTouch} // Handle touch move on the slider
                             />
+                            <div className='barmain'>
+                                <span className='bar' onClick={() => handleBarClick(5)}></span>
+                                <span className='bar'id='bar2' onClick={() => handleBarClick(20)}></span>
+                                <span className='bar' id='bar3' onClick={() => handleBarClick(35)}></span>
+                                <span className='bar' id='bar4' onClick={() => handleBarClick(50)}></span>
+                                <span className='bar' id='bar5' onClick={() => handleBarClick(65)}></span>
+                                
+
+                            </div>
+                            
                         </div>
                         {validationMessage && <div className="validation-message">{validationMessage}</div>} {/* Display the validation message if it exists */}
                     </div>

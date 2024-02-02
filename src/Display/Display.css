@@ -132,7 +132,7 @@
     align-items: center;
     margin-top: 2%;
     flex-direction: column;
-    gap: 1vw;
+    gap: 3vw;
     opacity: 1;
 }
 
@@ -173,49 +173,135 @@ textarea {
     margin-top: 5px;
 }
 
-Custom Slider Styles
-.rs-slider .rs-slider-handle {
-    background-color: green !important; 
-  }
-  
-  .rs-slider .rs-slider-progress {
-    background-color: green !important; 
-  }
-  
-  .rs-slider .rs-slider-rail {
-    background-color: lightgreen !important; 
-  }
+Custom Slider Styles .rs-slider .rs-slider-handle {
+    background-color: green !important;
+}
 
-  
-  .rs-slider-bar{
+.rs-slider .rs-slider-progress {
+    background-color: green !important;
+}
+
+.rs-slider .rs-slider-rail {
+    background-color: lightgreen !important;
+}
+
+
+.rs-slider-bar {
     background-color: #CCE3D8 !important;
     height: 10px !important;
 
-  }
+}
 
-  .rs-slider-progress-bar{
+.rs-slider-progress-bar {
     background-color: #50A972 !important;
-  }
+}
 
-  
- .rs-slider-handle{
-    background-color:  #50A972 !important;
+
+.rs-slider-handle {
+    background-color: #50A972 !important;
     height: 20px !important;
     top: -100% !important;
- }
+}
 
 
- .rs-slider-handle::before{
+.rs-slider-handle::before {
     border: 5px solid #50A972 !important;
     width: 30px !important;
     height: 30px !important;
- }
+}
 
 
- .rs-tooltip {
-    background-color:  #50A972 !important;
- }
+.rs-tooltip {
+    background-color: #50A972 !important;
+    display: none !important;
+}
 
- .rs-tooltip[class*='placement-top']::after{
+.rs-tooltip[class*='placement-top']::after {
     border-top-color: green !important;
- }
+    display: none !important;
+}
+
+
+.sliderRange {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.barmain {
+    display: flex;
+    /* Aligns the child elements (bars) horizontally */
+    /* justify-content: space-between;  */
+    align-items: flex-end;
+    /* Aligns bars to the bottom of the container */
+    height: 50px;
+    /* Adjust as needed */
+    box-sizing: border-box;
+    width: 100%;
+
+}
+
+.bar {
+    width: 8px;
+    /* Width of each bar */
+    background-color: #50A972;
+    /* Color of bars */
+    margin: 0 5px;
+    /* Space between bars */
+}
+
+/* Example heights - adjust as needed */
+.bar:nth-child(1) {
+    height: 40%;
+}
+
+.bar:nth-child(2) {
+    height: 40%;
+}
+
+.bar:nth-child(3) {
+    height: 40%;
+}
+
+.bar:nth-child(4) {
+    height: 40%;
+}
+
+.bar:nth-child(5) {
+    height: 40%;
+}
+
+
+#bar2 {
+    margin-left: 24%;
+}
+
+#bar3 {
+    margin-left: 24%;
+}
+
+#bar4 {
+    margin-left: 23.5%;
+}
+
+#bar5 {
+    margin-left: 23%;
+}
+
+.agehead {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+}
+
+.agenum {
+    /* UI Properties */
+    text-align: left;
+    /* font: normal normal normal 30px/24px Helvetica Neue; */
+    letter-spacing: 1px;
+    color: #777778;
+    opacity: 1;
+    padding: 20px;
+    
+}

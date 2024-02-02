@@ -28,7 +28,7 @@ import UsePreventZoom from './usePreventZoom';
 function App() {
   const [qaList, setQaList] = useState([
     { question: 'Please select your gender', answer: '' }, // Repeat this 7 times or as needed
-    { question: 'Please enter your age', answer: '' },
+    { question: 'Please enter your age', answer: '0' },
     { question: 'What did you gain the most from PARSEC', answer: '' },
     { question: 'How satisfied are you with your visit to PARSEC?', answer: '' },
     { question: 'What could we improve?', answer: '' },
