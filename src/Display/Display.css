@@ -39,7 +39,7 @@
     height: 49px;
     text-align: center;
     font-family: "Helvetica Neue";
-    font: normal normal medium 30px/39px Helvetica Neue;
+    font: normal normal medium 38px/39px Helvetica Neue;
     justify-content: center;
     letter-spacing: 1px;
     color: #000000;
@@ -58,7 +58,7 @@
 }
 
 .button {
-    width: 118px;
+    width: 135px;
     height: 147px;
     /* UI Properties */
     background: #FFFFFF 0% 0% no-repeat padding-box;
@@ -102,11 +102,11 @@
 }
 
 .names {
-    width: 132px;
+    width: 200px;
     height: 20px;
     /* UI Properties */
     text-align: center;
-    font: normal normal 600 22px/25px DM Sans;
+    font: normal normal 600 30px/30px DM Sans;
 
     letter-spacing: 0.75px;
     color: #777778;
@@ -120,7 +120,7 @@
     flex-direction: column;
     height: 93px;
     gap: 57px;
-    font: normal normal 600 30px/39px Helvetica Neue;
+    font: normal normal 600 40px/39px Helvetica Neue;
     height: 50%;
 
 }
