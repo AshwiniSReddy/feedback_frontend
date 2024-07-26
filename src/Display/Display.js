@@ -43,10 +43,10 @@ function Display() {
     
         // Calculate the new value based on touch position
         // Assuming the slider's min is 5, max is 60
-        let newValue = 5 + touchPosition * (65 - 5);
+        let newValue = 5 + touchPosition * (100 - 5);
     
         // Limit the newValue to the range 5 to 60
-        newValue = Math.max(5, Math.min(newValue, 65));
+        newValue = Math.max(5, Math.min(newValue, 100));
     
         const intValue = Math.round(newValue);
         
@@ -118,7 +118,7 @@ function Display() {
                             display: 'block', width: 600, paddingLeft: 30
                         }}>
                             <Slider
-                                max={65}
+                                max={100}
                                 min={5}
                                 // step={10}
                                 defaultValue={33}
@@ -130,10 +130,10 @@ function Display() {
                             />
                             <div className='barmain'>
                                 <span className='bar' onClick={() => handleBarClick(5)}></span>
-                                <span className='bar'id='bar2' onClick={() => handleBarClick(20)}></span>
-                                <span className='bar' id='bar3' onClick={() => handleBarClick(35)}></span>
-                                <span className='bar' id='bar4' onClick={() => handleBarClick(50)}></span>
-                                <span className='bar' id='bar5' onClick={() => handleBarClick(65)}></span>
+                                <span className='bar'id='bar2' onClick={() => handleBarClick(29)}></span>
+                                <span className='bar' id='bar3' onClick={() => handleBarClick(54)}></span>
+                                <span className='bar' id='bar4' onClick={() => handleBarClick(79)}></span>
+                                <span className='bar' id='bar5' onClick={() => handleBarClick(100)}></span>
                                 
 
                             </div>
